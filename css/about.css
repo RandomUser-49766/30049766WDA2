@@ -1,0 +1,100 @@
+/* Timeline container */
+.timeline {
+  position: relative;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 2px solid #2a2a2a;
+}
+
+/* Timeline item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* Timeline dot */
+.timeline-dot {
+  position: absolute;
+  left: -11px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  background-color: #e10600;
+  border-radius: 50%;
+}
+
+/* Timeline content */
+.timeline-content {
+  background-color: #121212;
+  border: 1px solid #2a2a2a;
+  padding: 15px 20px;
+  border-radius: 6px;
+}
+
+/* Timeline headings */
+.timeline-content h6 {
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+/* Timeline text */
+.timeline-content p {
+  margin-bottom: 0;
+  color: #d0d0d0;
+}
+
+/* Initial hidden state */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+/* Visible when scrolled into view */
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Phase label */
+.timeline-phase {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  color: #e10600;
+}
+
+/* Phase arrows */
+.timeline-item::after {
+  content: '→';
+  position: absolute;
+  left: -34px;
+  top: 0;
+  font-size: 18px;
+  color: #e10600;
+  opacity: 0.6;
+}
+
+.timeline-item:last-child::after {
+  content: '';
+}
+
+.timeline-item:nth-child(2) {
+  transition-delay: 0.05s;
+}
+.timeline-item:nth-child(3) {
+  transition-delay: 0.1s;
+}
+.timeline-item:nth-child(4) {
+  transition-delay: 0.15s;
+}
+
+@media (max-width: 768px) {
+  section {
+    margin-bottom: 2rem;
+  }
+}

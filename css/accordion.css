@@ -1,0 +1,128 @@
+/* Accordion container */
+.accordion .card {
+  background-color: #121212;
+  border: 1px solid #2a2a2a;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Accordion headers */
+.accordion .card-header {
+  background-color: #161616;
+  border-bottom: 1px solid #2a2a2a;
+  padding: 0;
+}
+
+/* Header buttons */
+.accordion .btn-link {
+  width: 100%;
+  text-align: left;
+  color: #ffffff;
+  padding: 16px 20px;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Red accent bar (left) */
+.accordion .btn-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #e10600;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* Hover state */
+.accordion .btn-link:hover {
+  background-color: #1d1d1d;
+  color: #ffffff;
+}
+
+/* Active (expanded) state */
+.accordion .btn-link:not(.collapsed) {
+  background-color: #1d1d1d;
+  color: #ffffff;
+}
+
+.accordion .btn-link:not(.collapsed)::before {
+  opacity: 1;
+}
+
+
+.accordion .btn-link:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/* Accordion body */
+.accordion .card-body {
+  background-color: #121212;
+  color: #dcdcdc;
+  border-top: 1px solid #2a2a2a;
+  line-height: 1.6;
+}
+
+/* Lists inside accordion */
+.accordion ul {
+  padding-left: 18px;
+}
+
+.accordion ul li {
+  margin-bottom: 6px;
+}
+
+.accordion .collapse {
+  transition: height 0.35s ease;
+}
+
+.accordion .collapse .card-body {
+  animation: accordionFade 0.3s ease;
+}
+
+@keyframes accordionFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.accordion .collapse {
+  transition: height 0.35s ease;
+}
+
+.accordion .collapse .card-body {
+  animation: accordionFade 0.3s ease;
+}
+
+@keyframes accordionFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.accordion .btn-link::after {
+  content: "▾";
+  position: absolute;
+  right: 20px;
+  transition: transform 0.3s ease;
+}
+
+.accordion .btn-link:not(.collapsed)::after {
+  transform: rotate(180deg);
+}
