@@ -27,9 +27,17 @@
 
 .video-background {
   position: relative;
-  width: 100%;
-  min-height: 100vh;
+  overflow: hidden;
 }
+
+.video-background video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .float-right{
   position:absolute;
 }
