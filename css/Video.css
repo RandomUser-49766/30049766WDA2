@@ -25,63 +25,68 @@
   color: white;
 }
 
-.hero {
+/* Full-screen video hero */
+.video-hero {
   position: relative;
-  height: 100vh;
+  height: 100vh;       /* full viewport height */
   overflow: hidden;
 }
 
-.hero video {
+/* Video fills the section */
+.video-hero video {
   position: absolute;
-  inset: 0;
+  inset: 0;            /* top:0; right:0; bottom:0; left:0 */
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;   /* cover entire section */
   z-index: 0;
 }
 
-.hero > *:not(video) {
+/* Content overlays the video */
+.video-hero .hero-content {
   position: relative;
   z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* vertically center */
+  align-items: center;      /* horizontally center */
+  text-align: center;
+  color: white;             /* change if needed */
+  padding: 0 1rem;          /* some horizontal padding for mobile */
 }
 
+/* Example button styling */
+.video-hero .cta-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0;
+  background-color: #1ebba3;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
 
+.video-hero .cta-btn:hover {
+  background-color: #189582;
+}
+
+/* Responsive text */
 @media (max-width: 768px) {
-  .caption h1 {
-    font-size: 1.4rem;
-    letter-spacing: 0.15rem;
-    padding-bottom: 0.5rem;
+  .video-hero .hero-content h2 {
+    font-size: 1.6rem;
   }
 
-  .caption h3 {
-    font-size: 1.1rem;
-    padding-bottom: 1.2rem;
+  .video-hero .hero-content p {
+    font-size: 1rem;
   }
 
-  .btn-lg {
+  .video-hero .cta-btn {
     font-size: 1rem;
     padding: 0.5rem 1rem;
   }
-  .col-md-8 h1 {
-    font-size: 2.4rem;
-  }
 }
-
-/*============ BOOTSTRAP BREAK POINTS:
-
-Extra small (xs) devices (portrait phones, less than 576px)
-No media query since this is the default in Bootstrap
-
-Small (sm) devices (landscape phones, 576px and up)
-@media (min-width: 576px) { ... }
-
-Medium (md) devices (tablets, 768px and up)
-@media (min-width: 768px) { ... }
-
-Large (lg) devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
-
-Extra (xl) large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }
-
-=============*/
