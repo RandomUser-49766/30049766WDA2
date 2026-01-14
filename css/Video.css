@@ -40,11 +40,6 @@
   z-index: -1;
 }
 
-
-.float-right{
-  position:absolute;
-}
-
 @media (max-width: 768px) {
   .caption h1 {
     font-size: 1.4rem;
